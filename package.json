@@ -1,0 +1,29 @@
+{
+  "name": "service-error",
+  "version": "1.0.0",
+  "description": "An extended Error class which helps to initialize error and log error easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavierchow/service-error.git"
+  },
+  "keywords": [
+    "error",
+    "logging"
+  ],
+  "author": "xavierchow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xavierchow/service-error/issues"
+  },
+  "homepage": "https://github.com/xavierchow/service-error#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "es6-error": "^4.1.1"
+  }
+}

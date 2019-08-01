@@ -1,0 +1,9 @@
+{
+  "extends": ["plugin:prettier/recommended", "plugin:jest/recommended"],
+  "rules": {
+    "jest/no-focused-tests": "warn"
+  },
+  "parserOptions":{
+    "ecmaVersion": 2018
+  }
+}
