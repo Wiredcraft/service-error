@@ -2,7 +2,7 @@ ServiceError
 ====================
 
 - [Intro](#intro)
-- [How to use](#how_to_use)
+- [How to use](#how-to-use)
 - [License](#licnese)
 
 Intro
