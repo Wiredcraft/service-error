@@ -1,5 +1,5 @@
 {
-  "name": "service-error",
+  "name": "@wiredcraft/service-error",
   "version": "1.0.0",
   "description": "An extended Error class which helps to initialize error and log error easily",
   "main": "index.js",
