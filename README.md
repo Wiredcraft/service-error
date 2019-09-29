@@ -14,7 +14,7 @@ see: https://xavierchow.github.io/talk_error_handling_in_nodejs/#/
 
 How to use
 ----
-see: https://github.com/xavierchow/service-error/blob/master/test/index.test.js
+see: https://github.com/Wiredcraft/service-error/blob/master/test/index.test.js
 
 License
 -----------------

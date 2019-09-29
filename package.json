@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xavierchow/service-error.git"
+    "url": "git+https://github.com/Wiredcraft/service-error.git"
   },
   "keywords": [
     "error",
@@ -17,9 +17,9 @@
   "author": "xavierchow",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xavierchow/service-error/issues"
+    "url": "https://github.com/Wiredcraft/service-error/issues"
   },
-  "homepage": "https://github.com/xavierchow/service-error#readme",
+  "homepage": "https://github.com/Wiredcraft/service-error#readme",
   "devDependencies": {
     "jest": "^24.8.0"
   },
