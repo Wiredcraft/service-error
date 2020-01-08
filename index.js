@@ -20,7 +20,7 @@ class ServiceError extends ExtendableError {
     super(msg);
     this.code = code;
     Object.assign(this, extra);
-    if (logger) {
+    if (logger && logger.error) {
       logger.error({
         ...extra,
         code: this.code,

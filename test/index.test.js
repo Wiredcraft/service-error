@@ -20,12 +20,31 @@ describe('lib error', () => {
       expect(err.message).toBe('msg');
       expect(err.foo).toBe('bar');
     });
+    test('should be able to set msg as null', () => {
+      const err = new ServiceError('1234', null, { foo: 'bar' });
+      expect(err.code).toBe('1234');
+      expect(err.message).toBe(null);
+      expect(err.foo).toBe('bar');
+    });
     test('should be able to create with ServiceError instance', () => {
       const err = new ServiceError('1234', 'msg', { foo: 'bar' });
       const err2 = new ServiceError(err);
       expect(err2.code).toBe('1234');
       expect(err2.message).toBe('msg');
       expect(err2.foo).toBe('bar');
+    });
+    test('should be able to call with code, msg, extra and logger', () => {
+      const logger = { error: jest.fn(e => e)};
+      const err = new ServiceError('1234', 'msg', { foo: 'bar' }, logger);
+      expect(err.code).toBe('1234');
+      expect(err.message).toBe('msg');
+      expect(err.foo).toBe('bar');
+      // [0][0]: 1st argument of 1st call
+      expect(logger.error.mock.calls[0][0]).toEqual({
+        code: '1234',
+        message: 'msg',
+        foo: 'bar'
+      });
     });
   });
   describe('factory', () => {
