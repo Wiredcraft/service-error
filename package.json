@@ -4,7 +4,8 @@
   "description": "An extended Error class which helps to initialize error and log error easily",
   "main": "index.js",
   "scripts": {
-    "test": "jest "
+    "test": "jest ",
+    "watch": "jest --watch"
   },
   "repository": {
     "type": "git",

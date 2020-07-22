@@ -8,7 +8,7 @@ class ServiceError extends ExtendableError {
     if (msg instanceof Error) {
       msg = msg.message;
     }
-    if (code instanceof ServiceError) {
+    if (code instanceof ServiceError || isObject(code)) {
       const instance = code;
       if (typeof msg !== 'string') {
         extra = msg;
@@ -24,10 +24,14 @@ class ServiceError extends ExtendableError {
       logger.error({
         ...extra,
         code: this.code,
-        message: msg
+        message: msg,
       });
     }
   }
+}
+
+function isObject(obj) {
+  return obj === Object(obj);
 }
 
 function ServiceErrorFactory(logger) {
@@ -46,5 +50,5 @@ function ServiceErrorFactory(logger) {
 
 module.exports = {
   ServiceError,
-  ServiceErrorFactory
+  ServiceErrorFactory,
 };

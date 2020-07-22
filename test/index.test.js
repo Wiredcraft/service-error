@@ -1,6 +1,5 @@
 'use strict';
 
-// const app = require('../server/server');
 const { ServiceErrorFactory, ServiceError } = require('../index');
 
 describe('lib error', () => {
@@ -33,8 +32,15 @@ describe('lib error', () => {
       expect(err2.message).toBe('msg');
       expect(err2.foo).toBe('bar');
     });
+    test('should be able to create with http error object', () => {
+      const selfDefinedErr = { code: '111', message: 'foo', statusCode: 200 };
+      const err = new ServiceError(selfDefinedErr);
+      expect(err.code).toBe('111');
+      expect(err.message).toBe('foo');
+      expect(err.statusCode).toBe(200);
+    });
     test('should be able to call with code, msg, extra and logger', () => {
-      const logger = { error: jest.fn(e => e)};
+      const logger = { error: jest.fn((e) => e) };
       const err = new ServiceError('1234', 'msg', { foo: 'bar' }, logger);
       expect(err.code).toBe('1234');
       expect(err.message).toBe('msg');
@@ -43,7 +49,7 @@ describe('lib error', () => {
       expect(logger.error.mock.calls[0][0]).toEqual({
         code: '1234',
         message: 'msg',
-        foo: 'bar'
+        foo: 'bar',
       });
     });
   });
@@ -63,7 +69,7 @@ describe('lib error', () => {
       expect(logger.error.mock.calls).toHaveLength(1);
       expect(logger.error.mock.calls[0][0]).toEqual({
         code: '1234',
-        message: 'msg2'
+        message: 'msg2',
       });
     });
     test('should be able to call with code msg and extra', () => {
@@ -76,7 +82,7 @@ describe('lib error', () => {
       expect(logger.error.mock.calls[0][0]).toEqual({
         code: '1234',
         message: 'msg2',
-        foo: 'bar'
+        foo: 'bar',
       });
     });
     test('should have the correct stack', () => {
@@ -100,7 +106,7 @@ describe('lib error', () => {
       expect(logger.error.mock.calls[0][0]).toEqual({
         code: '1234',
         message: 'msg',
-        foo: 'bar'
+        foo: 'bar',
       });
     });
     test('should be able to attach extra to the wrapper error', () => {
@@ -117,7 +123,7 @@ describe('lib error', () => {
         code: '1234',
         message: 'msg',
         foo: 'bar',
-        qux: 1
+        qux: 1,
       });
     });
   });
